@@ -1,0 +1,332 @@
+@baseColor:#e92322;
+
+// 头部区域
+header{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+    .row>div{
+        text-align: center;
+    }
+    .row>div:nth-of-type(-n+3){
+        border-right: 1px solid #ccc;
+    }
+    .row>div:nth-last-of-type(1){
+        >.btn-danger{
+            padding: 3px 5px;
+        }
+        >.btn-link{
+            color: #333;
+        }
+    }
+    .wjs_code{
+        display: block;
+        position: relative;
+        text-align: center;
+        >img{
+            position: absolute;
+            top: 48px;
+            left: 50%;
+            display: none;
+            transform:translateX(-50%);
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        &:hover>img{
+            display: block;
+        }
+    }
+}
+// 导航区域
+.wjs_nav{
+    &.navbar{
+        margin-bottom: 0px;
+    }
+    .navbar-brand{
+        height: 80px;
+        line-height: 50px;
+        >.wjs_icon{
+            font-size: 40px;
+        }
+        >.wjs_icon_logo{
+            color: @baseColor;
+        }
+        >.wjs_icon_text{
+            color: #333;
+        }
+
+    }
+    .navbar-toggle{
+        margin-top: 23px;
+     }
+    .navbar-nav {
+        font-size: 16px;
+        .active >a{
+            background-color: transparent;
+            border-bottom: 3px solid @baseColor;
+        }
+        a{
+            line-height: 50px;
+            &:hover{
+                background-color:transparent;
+                border-bottom: 3px solid @baseColor;
+            }
+             .navbar-collapse >ul{
+                 height: 80px;
+                 line-height: 50px;
+             }
+    }
+    }
+}
+// 轮播图
+.carousel-inner{
+    >.item{
+        .mobileImg>img{
+                width: 100%;
+            }
+        >.pcImg{
+            width: 100%;
+            height: 410px;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+}
+// 信息
+.wjs_info{
+    padding: 30px;
+    .row>div{
+        margin-top: 10px;
+    }
+    .wjs_icon_E900{
+        font-size: 30px;
+    }
+    .row a:hover{
+        color: @baseColor;
+    }
+}
+// 预约
+.wjs_reverse{
+    .row>div{
+    height: 60px;
+    line-height: 60px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 0 20px;
+    text-align: center;
+    >.wjs_icon{
+        font-size: 18px;
+    }
+    >.yuyue{
+        color: @baseColor;
+        border-bottom: 1px dashed @baseColor;
+    }
+    >a:hover{
+        color: @baseColor;
+    }
+    }
+}
+// 产品区域
+.wjs_product{
+    background-color: #eee;
+    .row{
+        >.active{
+            >.wjs_pBox{
+                background-color: @baseColor;
+                p,sub,b{
+                    color: #fff;
+                }
+                >.wjs_pLeft{
+                   &::before{
+                    content:"\e915";
+                    font-family: "wjs";
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    color: #fff;
+                    font-size: 25px;
+                   }
+
+                }
+            }
+        }
+    }
+    .wjs_pBox{
+        height: 150px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        >.wjs_pLeft{
+            margin-right: 100px;
+            height: 150px;
+            padding-top: 10px;
+            >p{
+                text-align: center;
+            }
+            >.row{
+                margin-left: -10px;
+                margin-right: -10px;
+                p{
+                    font-size: 12px;
+                }
+                >div:nth-of-type(even){
+                    text-align: right;
+                }
+            }
+        }
+        >.wjs_pRight{
+            width: 100px;
+            height: 150px;
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            border-left: 1px dashed #ccc;
+            padding-top: 30px;
+          text-align: center;
+          >b{
+            font-size: 40px;
+            color: @baseColor;
+          }
+          sub{
+            color: @baseColor;
+            bottom: 0;
+          }
+          p{
+            font-size: 14px;
+          }
+
+          &::before,&::after{
+            content:"";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #eee;
+            position: absolute;
+            left: -5px;
+        }
+        &::before{
+            top: -5px;
+        }
+        &::after{
+            bottom:-5px;
+        }
+        >.wjs_tip{
+          width: 100%;
+          position: absolute;
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          cursor: pointer;
+            >span:nth-of-type(1){
+                border: 1px solid red;
+            }
+            >span:nth-of-type(2){
+                border: 1px solid blue;
+            }
+        }
+        }    
+    }
+}
+// 新闻样式
+.wjs_news{
+    padding-top: 30px;
+    .wjs_nTitle{
+       height: 50px;
+       line-height: 50px;
+       text-align: center;
+       border-bottom: 1px solid #ccc;
+       position: relative;
+       &::after{
+           content: "";
+           width: 8px;
+           height: 8px;
+           border-radius: 50%;
+           border:1px solid #ccc;
+           position: absolute;
+           right: -8px;
+           bottom: -3px;
+       }
+    }
+    // 添加虚线
+    .news_line{
+        content: "";
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        border-left: 1px dashed @baseColor;
+        top: 0;
+        left: 45px;
+    }
+    .nav-tabs{
+        border-bottom: none;
+        >.active a{
+            border: none;
+            background-color: @baseColor;
+        }
+        .active a:hover{
+            border: none;
+        }
+        >li{
+            margin-bottom: 60px;
+            >a{
+                line-height: 60px;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: #ddd;
+                border: none;
+            }
+            >a:hover{
+                background-color: @baseColor;
+            }
+            .wjs_icon{
+                text-align: center;
+                font-size: 30px;
+                color: #fff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translateX(50%);
+            }
+        }
+        >li:last-of-type{
+            margin-bottom: 0px;
+        }
+
+        // 使用媒体查询改变li的宽度
+        @media screen and (min-width:768px) and (max-width:992px){
+            >li{
+                margin: 20px 30px;
+            }
+        }
+        @media screen and (max-width:768px){
+            >li{
+                margin: 20px 0;
+                width: 25%;
+            }
+        }
+    }
+    .wjs_newslist{
+        list-style: none;
+        >li{
+            line-height: 47px;
+        }
+    }
+}
+.wjs_partner{
+    background-color: #ccc;
+    h3{
+        text-align: center;
+    }
+    ul{
+        list-style: none;
+        >li{
+            float: left;
+            >.wjs_icon{
+                font-size: 50px;
+                margin-right: 70px;
+            }
+        }
+    }
+}
